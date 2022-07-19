@@ -9,7 +9,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+//recipeTitleLabel
+//caloriesLabel
+//ingredientsLabel
+
 @interface DetailsViewController : UIViewController
+
+@property (strong, nonatomic) NSDictionary *recipe;
+@property (weak, nonatomic) IBOutlet UILabel *recipeTitleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *posterImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @end
 

@@ -7,6 +7,7 @@ target 'ClickForTreats' do
 
   # Pods for ClickForTreats
   pod 'Parse'
+  pod 'AFNetworking'
 
   target 'ClickForTreatsTests' do
     inherit! :search_paths

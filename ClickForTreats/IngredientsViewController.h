@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IngredientsViewController : UIViewController
+@interface IngredientsViewController : UITableViewController
 
 @end
 

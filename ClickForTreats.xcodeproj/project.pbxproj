@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		11D494EA33628684DB091A26 /* Pods_ClickForTreatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF6A127C0F33B3CCA5A867 /* Pods_ClickForTreatsTests.framework */; };
+		8A1F8C45288622DB00D75CF9 /* RecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F8C44288622DB00D75CF9 /* RecipeCell.m */; };
 		8A59B22C2876548C00518497 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59B22B2876548C00518497 /* AppDelegate.m */; };
 		8A59B22F2876548C00518497 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59B22E2876548C00518497 /* SceneDelegate.m */; };
-		8A59B2322876548C00518497 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59B2312876548C00518497 /* ViewController.m */; };
 		8A59B2352876548C00518497 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A59B2332876548C00518497 /* Main.storyboard */; };
 		8A59B2372876548D00518497 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A59B2362876548D00518497 /* Assets.xcassets */; };
 		8A59B23A2876548D00518497 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A59B2382876548D00518497 /* LaunchScreen.storyboard */; };
@@ -22,6 +22,12 @@
 		8A7B5DC62879119D00E41AD7 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7B5DC52879119D00E41AD7 /* ProfileViewController.m */; };
 		8A7B5DC9287911B200E41AD7 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7B5DC8287911B200E41AD7 /* DetailsViewController.m */; };
 		8A7B5DCC287911EF00E41AD7 /* IngredientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7B5DCB287911EF00E41AD7 /* IngredientsViewController.m */; };
+		8AA5CE79287E341E00F1AA4F /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5CE78287E341E00F1AA4F /* RecipeViewController.m */; };
+		8AA5CE7C287E37F400F1AA4F /* RecipeApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5CE7B287E37F400F1AA4F /* RecipeApiManager.m */; };
+		8AA5CE7F287E3E9B00F1AA4F /* EdamamURLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5CE7E287E3E9B00F1AA4F /* EdamamURLBuilder.m */; };
+		8AA5CE82287E424000F1AA4F /* Ingredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5CE81287E424000F1AA4F /* Ingredient.m */; };
+		8AA5CE84287F75F400F1AA4F /* UrlBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5CE83287F75F400F1AA4F /* UrlBuilderTest.m */; };
+		8AA5CE892880B5DF00F1AA4F /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5CE882880B5DF00F1AA4F /* Recipe.m */; };
 		E508F987BD5094A0EF74D4B7 /* Pods_ClickForTreats_ClickForTreatsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4A7F760D006805FC9525C4 /* Pods_ClickForTreats_ClickForTreatsUITests.framework */; };
 		FD58D4EA26B2AE7F1542293C /* Pods_ClickForTreats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0177E4C62E958CDEEEEC4F91 /* Pods_ClickForTreats.framework */; };
 /* End PBXBuildFile section */
@@ -49,13 +55,13 @@
 		4A4A7F760D006805FC9525C4 /* Pods_ClickForTreats_ClickForTreatsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClickForTreats_ClickForTreatsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FCF6A127C0F33B3CCA5A867 /* Pods_ClickForTreatsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClickForTreatsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC43EF296E03A4A628B05ED /* Pods-ClickForTreats-ClickForTreatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClickForTreats-ClickForTreatsUITests.release.xcconfig"; path = "Target Support Files/Pods-ClickForTreats-ClickForTreatsUITests/Pods-ClickForTreats-ClickForTreatsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8A1F8C43288622DB00D75CF9 /* RecipeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeCell.h; sourceTree = "<group>"; };
+		8A1F8C44288622DB00D75CF9 /* RecipeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeCell.m; sourceTree = "<group>"; };
 		8A59B2272876548C00518497 /* ClickForTreats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickForTreats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A59B22A2876548C00518497 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8A59B22B2876548C00518497 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8A59B22D2876548C00518497 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		8A59B22E2876548C00518497 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		8A59B2302876548C00518497 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8A59B2312876548C00518497 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8A59B2342876548C00518497 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A59B2362876548D00518497 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A59B2392876548D00518497 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +80,17 @@
 		8A7B5DC8287911B200E41AD7 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		8A7B5DCA287911EF00E41AD7 /* IngredientsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientsViewController.h; sourceTree = "<group>"; };
 		8A7B5DCB287911EF00E41AD7 /* IngredientsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientsViewController.m; sourceTree = "<group>"; };
+		8AA5CE77287E341E00F1AA4F /* RecipeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
+		8AA5CE78287E341E00F1AA4F /* RecipeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
+		8AA5CE7A287E37F400F1AA4F /* RecipeApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeApiManager.h; sourceTree = "<group>"; };
+		8AA5CE7B287E37F400F1AA4F /* RecipeApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeApiManager.m; sourceTree = "<group>"; };
+		8AA5CE7D287E3E9B00F1AA4F /* EdamamURLBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EdamamURLBuilder.h; sourceTree = "<group>"; };
+		8AA5CE7E287E3E9B00F1AA4F /* EdamamURLBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EdamamURLBuilder.m; sourceTree = "<group>"; };
+		8AA5CE80287E424000F1AA4F /* Ingredient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ingredient.h; sourceTree = "<group>"; };
+		8AA5CE81287E424000F1AA4F /* Ingredient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ingredient.m; sourceTree = "<group>"; };
+		8AA5CE83287F75F400F1AA4F /* UrlBuilderTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UrlBuilderTest.m; sourceTree = "<group>"; };
+		8AA5CE872880B5DF00F1AA4F /* Recipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		8AA5CE882880B5DF00F1AA4F /* Recipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		979A683FFECB5C8D2C88B26B /* Pods-ClickForTreatsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClickForTreatsTests.release.xcconfig"; path = "Target Support Files/Pods-ClickForTreatsTests/Pods-ClickForTreatsTests.release.xcconfig"; sourceTree = "<group>"; };
 		D8A2337C395CCC8114E47F0F /* Pods-ClickForTreats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClickForTreats.debug.xcconfig"; path = "Target Support Files/Pods-ClickForTreats/Pods-ClickForTreats.debug.xcconfig"; sourceTree = "<group>"; };
 		E306711252C26EC5C1C6F411 /* Pods-ClickForTreatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClickForTreatsTests.debug.xcconfig"; path = "Target Support Files/Pods-ClickForTreatsTests/Pods-ClickForTreatsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,12 +173,12 @@
 		8A59B2292876548C00518497 /* ClickForTreats */ = {
 			isa = PBXGroup;
 			children = (
+				8AA5CE7A287E37F400F1AA4F /* RecipeApiManager.h */,
+				8AA5CE7B287E37F400F1AA4F /* RecipeApiManager.m */,
 				8A59B22A2876548C00518497 /* AppDelegate.h */,
 				8A59B22B2876548C00518497 /* AppDelegate.m */,
 				8A59B22D2876548C00518497 /* SceneDelegate.h */,
 				8A59B22E2876548C00518497 /* SceneDelegate.m */,
-				8A59B2302876548C00518497 /* ViewController.h */,
-				8A59B2312876548C00518497 /* ViewController.m */,
 				8A59B2332876548C00518497 /* Main.storyboard */,
 				8A59B2362876548D00518497 /* Assets.xcassets */,
 				8A59B2382876548D00518497 /* LaunchScreen.storyboard */,
@@ -175,6 +192,16 @@
 				8A7B5DC8287911B200E41AD7 /* DetailsViewController.m */,
 				8A7B5DCA287911EF00E41AD7 /* IngredientsViewController.h */,
 				8A7B5DCB287911EF00E41AD7 /* IngredientsViewController.m */,
+				8AA5CE77287E341E00F1AA4F /* RecipeViewController.h */,
+				8AA5CE78287E341E00F1AA4F /* RecipeViewController.m */,
+				8AA5CE7D287E3E9B00F1AA4F /* EdamamURLBuilder.h */,
+				8AA5CE7E287E3E9B00F1AA4F /* EdamamURLBuilder.m */,
+				8AA5CE80287E424000F1AA4F /* Ingredient.h */,
+				8AA5CE81287E424000F1AA4F /* Ingredient.m */,
+				8AA5CE872880B5DF00F1AA4F /* Recipe.h */,
+				8AA5CE882880B5DF00F1AA4F /* Recipe.m */,
+				8A1F8C43288622DB00D75CF9 /* RecipeCell.h */,
+				8A1F8C44288622DB00D75CF9 /* RecipeCell.m */,
 			);
 			path = ClickForTreats;
 			sourceTree = "<group>";
@@ -182,6 +209,7 @@
 		8A59B2452876548D00518497 /* ClickForTreatsTests */ = {
 			isa = PBXGroup;
 			children = (
+				8AA5CE83287F75F400F1AA4F /* UrlBuilderTest.m */,
 				8A59B2462876548D00518497 /* ClickForTreatsTests.m */,
 			);
 			path = ClickForTreatsTests;
@@ -434,12 +462,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A59B2322876548C00518497 /* ViewController.m in Sources */,
+				8AA5CE79287E341E00F1AA4F /* RecipeViewController.m in Sources */,
+				8AA5CE82287E424000F1AA4F /* Ingredient.m in Sources */,
 				8A7B5DCC287911EF00E41AD7 /* IngredientsViewController.m in Sources */,
 				8A59B22C2876548C00518497 /* AppDelegate.m in Sources */,
 				8A59B23D2876548D00518497 /* main.m in Sources */,
 				8A59B22F2876548C00518497 /* SceneDelegate.m in Sources */,
+				8A1F8C45288622DB00D75CF9 /* RecipeCell.m in Sources */,
+				8AA5CE7C287E37F400F1AA4F /* RecipeApiManager.m in Sources */,
+				8AA5CE892880B5DF00F1AA4F /* Recipe.m in Sources */,
 				8A7B5DC9287911B200E41AD7 /* DetailsViewController.m in Sources */,
+				8AA5CE7F287E3E9B00F1AA4F /* EdamamURLBuilder.m in Sources */,
 				8A7B5DC62879119D00E41AD7 /* ProfileViewController.m in Sources */,
 				8A7B5DC32879118300E41AD7 /* LoginViewController.m in Sources */,
 			);
@@ -450,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A59B2472876548D00518497 /* ClickForTreatsTests.m in Sources */,
+				8AA5CE84287F75F400F1AA4F /* UrlBuilderTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

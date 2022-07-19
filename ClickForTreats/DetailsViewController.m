@@ -6,6 +6,7 @@
 //
 
 #import "DetailsViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface DetailsViewController ()
 
@@ -15,7 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.recipeTitleLabel.text = self.recipe[@"label"];
+    NSString *baseURLString = @"...";
+    NSString *fullPosterUrl = [baseURLString stringByAppendingString:_recipe[@"poster_path"]];
+    NSURL *posterUrl = [NSURL URLWithString:fullPosterUrl];
+    NSString *backdropUrl = [baseURLString stringByAppendingString:_recipe[@"backdrop_path"]];
+    NSURL *backposterUrl = [NSURL URLWithString:backdropUrl];
+    [self.posterImageView setImageWithURL:posterUrl];
+    [self.backgroundImageView setImageWithURL:backposterUrl];
 }
 
 /*
