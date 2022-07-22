@@ -18,6 +18,13 @@
     // Do any additional setup after loading the view.
 }
 
+//NSString * csv = @"I,am,a\nc,s,v";
+//NSMutableArray *values = [NSMutableArray new];
+//for (NSString *line in [csv componentsSeparatedByString:@"\n"]) {
+//    [values addObject:[line componentsSeparatedByString:@","]];
+//}
+//self.textView.text = values.description;
+
 /*
 #pragma mark - Navigation
 

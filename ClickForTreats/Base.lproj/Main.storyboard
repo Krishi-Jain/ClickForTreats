@@ -28,10 +28,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="usernameField:" destination="sDE-xB-WVb" eventType="editingDidEnd" id="W5c-cl-BhC"/>
-                                    <action selector="usernameField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="mba-3v-iu5"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHN-5I-HUu">
                                 <rect key="frame" x="90" y="406" width="235" height="34"/>
@@ -67,7 +63,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="passwordField" destination="cHN-5I-HUu" id="9hW-N5-Kfo"/>
+                        <outlet property="passwordField" destination="cHN-5I-HUu" id="ZQc-B7-Mi6"/>
                         <outlet property="usernameField" destination="r7w-RB-ba6" id="Dzi-6e-CEm"/>
                     </connections>
                 </viewController>
@@ -325,6 +321,15 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Link"/>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pc2-XY-Eq8">
+                                <rect key="frame" x="145" y="712" width="240" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GBE-bR-UBs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -333,6 +338,7 @@
                         <outlet property="backgroundImageView" destination="o2i-Pl-UAv" id="wRM-Po-4cn"/>
                         <outlet property="posterImageView" destination="QJo-AN-PXR" id="nZ6-VU-B2P"/>
                         <outlet property="recipeTitleLabel" destination="eiB-Tq-aZV" id="5PY-MD-CMA"/>
+                        <outlet property="textView" destination="pc2-XY-Eq8" id="vJg-er-ePe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69w-M4-L2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -375,7 +381,6 @@
         <!--Root View Controller-->
         <scene sceneID="jUK-l8-ru1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VQx-Lb-PbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Sc9-Z2-dAd" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="VuG-cS-DDc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -425,6 +430,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="OFG-Db-eF9"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQx-Lb-PbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1850.7246376811595" y="-545.08928571428567"/>
         </scene>
@@ -545,6 +551,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

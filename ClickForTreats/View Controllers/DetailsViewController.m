@@ -7,6 +7,8 @@
 
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "Parser.h"
+
 
 @interface DetailsViewController ()
 
@@ -24,6 +26,12 @@
     NSURL *backposterUrl = [NSURL URLWithString:backdropUrl];
     [self.posterImageView setImageWithURL:posterUrl];
     [self.backgroundImageView setImageWithURL:backposterUrl];
+}
+
+- (void)testWebPage {
+    NSURL *url = [NSURL URLWithString:@"https://www.bbcgoodfood.com/recipes/green-salad-avocado"];
+    NSString *webPage = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+    self.textView.text = [Parser parseString:webPage].description;
 }
 
 /*
