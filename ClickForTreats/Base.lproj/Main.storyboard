@@ -46,6 +46,7 @@
                                 <connections>
                                     <action selector="login:" destination="sDE-xB-WVb" eventType="touchUpInside" id="Dtt-EC-ncN"/>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fe9-Rc-DFg"/>
+                                    <segue destination="w60-uT-2Xi" kind="show" identifier="homeSegue" id="czf-TU-B9R"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5k4-tF-Z4j">
@@ -77,7 +78,7 @@
             <objects>
                 <tableViewController id="GMj-9R-Mtq" customClass="IngredientsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="e1F-pc-35T">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -119,7 +120,7 @@
             <objects>
                 <tableViewController id="yiN-ef-Is5" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="VPF-Rj-85M">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -162,7 +163,7 @@
                 <navigationController id="5am-B3-PPa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" id="jaE-dg-cWj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fBx-sy-esO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -178,7 +179,7 @@
             <objects>
                 <tableViewController id="emo-z5-Ce7" customClass="RecipeViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="7Ks-2O-ux7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -350,7 +351,7 @@
             <objects>
                 <navigationController id="Nmr-MA-vea" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OWG-pD-fKL">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -367,7 +368,7 @@
                 <navigationController id="Ldh-Os-KvN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pantry" id="JdP-le-sr0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dSf-De-bt1">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -383,7 +384,7 @@
             <objects>
                 <tableViewController id="Sc9-Z2-dAd" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="VuG-cS-DDc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -440,7 +441,7 @@
                 <navigationController id="rcD-W1-aW2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorite" id="cfz-eH-dsr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oAL-hw-d0b">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -455,6 +456,7 @@
         <scene sceneID="KIi-dN-xga">
             <objects>
                 <tabBarController id="w60-uT-2Xi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xMK-dr-Yqi"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ujg-to-ikc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
