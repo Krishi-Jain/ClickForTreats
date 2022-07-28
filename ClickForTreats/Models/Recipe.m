@@ -25,7 +25,6 @@
     for (NSDictionary *dictionary in dictionaries) {
         // Calling the Movie initializer here
         Recipe *recipe = [[Recipe alloc] initWithDictionary:dictionary];
-
         [recipes addObject:recipe];
     }
     return recipes.copy;

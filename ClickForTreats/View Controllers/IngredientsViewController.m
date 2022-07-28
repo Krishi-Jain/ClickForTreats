@@ -28,8 +28,28 @@
     // Preserving selection between presentation
     self.clearsSelectionOnViewWillAppear = NO;
     
-    // Displaying an Edit button in the navigation bar for this view controller
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSString *strPath = [[NSBundle mainBundle] pathForResource:@"Pantry"ofType:@"csv"];
+    NSString *strFile = [NSString stringWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:nil];
+    if (!strFile) {
+        NSLog(@"Error reading file.");
+    }
+    
+    NSMutableArray *lines = [NSMutableArray new];
+    
+    NSScanner *lineScanner = [NSScanner scannerWithString:strFile];
+    do {
+        NSString *line = nil;
+        [lineScanner scanUpToString:@"\n" intoString:&line];
+        NSMutableArray *items = [NSMutableArray new];
+        for (NSString *item in [line componentsSeparatedByString:@","]) {
+            if(item.length > 0) {
+                [items addObject:item];
+            }
+        }
+        [lines addObject:items.copy];
+    } while (![lineScanner isAtEnd]);
+    
+    self.pantry = [lines copy];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -43,77 +63,57 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [self.pantry count];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return [[self.pantry objectAtIndex:section] count] - 1;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [[self.pantry objectAtIndex:section] firstObject];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    IngredientCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ingredientCell" forIndexPath:indexPath];
-    cell.ingredientLabel.text = [NSString stringWithFormat:@"Cell %i", indexPath.row];
-    cell.checkmarkImageViewAccessory.hidden = YES;
+    static NSString *tableIdentifier = @"ingredientCell";
+    IngredientCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    if (cell == nil) {
+        cell = [[IngredientCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ingredientCell"];
+    }
+    cell.textLabel.text = [[self.pantry objectAtIndex:indexPath.section] objectAtIndex:indexPath.row + 1];
     return cell;
+    
+    if([self.checkedIndexPath isEqual:indexPath])
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    currentIndexPath = indexPath;
-    IngredientCell *cell = nil;
-    if (!previousIndexPath) {
-        previousIndexPath = currentIndexPath;
+    // Uncheck the previous checked row
+    if(self.checkedIndexPath)
+    {
+        IngredientCell* uncheckCell = [tableView cellForRowAtIndexPath:self.checkedIndexPath];
+        uncheckCell.accessoryType = UITableViewCellAccessoryNone;
     }
-    if (previousIndexPath != currentIndexPath) {
-        //cell = (IngredientCell *) [tableView cellForRowAtIndexPath:previousIndexPath];
-        //cell.checkmarkImageViewAccessory.transform = CGAffineTransformMakeScale(0, 0);
-        //cell = (IngredientCell *) [tableView cellForRowAtIndexPath:currentIndexPath];
-        cell = (IngredientCell *) [tableView cellForRowAtIndexPath:indexPath];
-        cell.checkmarkImageViewAccessory.hidden = NO;
-        cell.checkmarkImageViewAccessory.transform = CGAffineTransformMakeScale(0, 0);
-        [UIView animateWithDuration:0.8 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-            cell.checkmarkImageViewAccessory.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            
-        }];
-        previousIndexPath = currentIndexPath;
+    if([self.checkedIndexPath isEqual:indexPath])
+    {
+        self.checkedIndexPath = nil;
     }
-    if (previousIndexPath == currentIndexPath) {
-        cell = (IngredientCell *) [tableView cellForRowAtIndexPath:previousIndexPath];
-        cell.checkmarkImageViewAccessory.hidden = NO;
-        cell.checkmarkImageViewAccessory.transform = CGAffineTransformMakeScale(0, 0);
-        
-        [UIView animateWithDuration:0.8 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-            cell.checkmarkImageViewAccessory.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            
-        }];
+    else
+    {
+        IngredientCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        self.checkedIndexPath = indexPath;
     }
 }
-
-/*
-- (void)createPantry {
-    NSString * csv = @"I,am,a\nc,s,v";
-    NSMutableArray *values = [NSMutableArray new];
-    for (NSString *line in [csv componentsSeparatedByString:@"\n"]) {
-        [values addObject:[line componentsSeparatedByString:@","]];
-    }
-    self.textView.text = values.description;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

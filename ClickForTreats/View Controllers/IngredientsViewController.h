@@ -10,7 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IngredientsViewController : UITableViewController
+@interface IngredientsViewController : UITableViewController {
+    NSIndexPath* checkedIndexPath;
+}
+
+@property (nonatomic, strong) NSArray *pantry;
+@property (nonatomic, retain) NSIndexPath* checkedIndexPath;
 
 @end
 
