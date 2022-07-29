@@ -11,6 +11,8 @@
     NSIndexPath *previousIndexPath, *currentIndexPath;
 }
 
+@property (nonatomic, retain) NSMutableSet* checkedIndexPaths;
+
 @end
 
 @implementation IngredientsViewController
@@ -50,6 +52,8 @@
     } while (![lineScanner isAtEnd]);
     
     self.pantry = [lines copy];
+    
+    self.checkedIndexPaths = [NSMutableSet new];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -85,9 +89,8 @@
         cell = [[IngredientCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ingredientCell"];
     }
     cell.textLabel.text = [[self.pantry objectAtIndex:indexPath.section] objectAtIndex:indexPath.row + 1];
-    return cell;
     
-    if([self.checkedIndexPath isEqual:indexPath])
+    if([self.checkedIndexPaths containsObject:indexPath])
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
@@ -95,24 +98,25 @@
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
+    return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Uncheck the previous checked row
-    if(self.checkedIndexPath)
+    if(self.checkedIndexPaths)
     {
-        IngredientCell* uncheckCell = [tableView cellForRowAtIndexPath:self.checkedIndexPath];
+        IngredientCell* uncheckCell = [tableView cellForRowAtIndexPath:indexPath];
         uncheckCell.accessoryType = UITableViewCellAccessoryNone;
     }
-    if([self.checkedIndexPath isEqual:indexPath])
+    if([self.checkedIndexPaths containsObject:indexPath])
     {
-        self.checkedIndexPath = nil;
+        [self.checkedIndexPaths removeObject:indexPath];
     }
     else
     {
         IngredientCell* cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        self.checkedIndexPath = indexPath;
+        [self.checkedIndexPaths addObject:indexPath];
     }
 }
 

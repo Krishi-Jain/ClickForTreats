@@ -11,7 +11,6 @@
 		8A1F8C45288622DB00D75CF9 /* RecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F8C44288622DB00D75CF9 /* RecipeCell.m */; };
 		8A1F8C4E288B321000D75CF9 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F8C4D288B321000D75CF9 /* Parser.m */; };
 		8A1F8C52289073C400D75CF9 /* IngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F8C51289073C400D75CF9 /* IngredientCell.m */; };
-		8A1F8C5428908D8100D75CF9 /* checkmark.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A1F8C5328908D8100D75CF9 /* checkmark.jpeg */; };
 		8A1F8C562891D4C300D75CF9 /* Pantry.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8A1F8C552891D4C300D75CF9 /* Pantry.csv */; };
 		8A59B22C2876548C00518497 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59B22B2876548C00518497 /* AppDelegate.m */; };
 		8A59B22F2876548C00518497 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59B22E2876548C00518497 /* SceneDelegate.m */; };
@@ -65,7 +64,6 @@
 		8A1F8C4D288B321000D75CF9 /* Parser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
 		8A1F8C50289073C400D75CF9 /* IngredientCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientCell.h; sourceTree = "<group>"; };
 		8A1F8C51289073C400D75CF9 /* IngredientCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientCell.m; sourceTree = "<group>"; };
-		8A1F8C5328908D8100D75CF9 /* checkmark.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = checkmark.jpeg; sourceTree = "<group>"; };
 		8A1F8C552891D4C300D75CF9 /* Pantry.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Pantry.csv; sourceTree = "<group>"; };
 		8A59B2272876548C00518497 /* ClickForTreats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickForTreats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A59B22A2876548C00518497 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 				8A59B23B2876548D00518497 /* Info.plist */,
 				8A59B23C2876548D00518497 /* main.m */,
 				8A1F8C552891D4C300D75CF9 /* Pantry.csv */,
-				8A1F8C5328908D8100D75CF9 /* checkmark.jpeg */,
 			);
 			path = ClickForTreats;
 			sourceTree = "<group>";
@@ -383,7 +380,6 @@
 				8A59B23A2876548D00518497 /* LaunchScreen.storyboard in Resources */,
 				8A59B2372876548D00518497 /* Assets.xcassets in Resources */,
 				8A59B2352876548C00518497 /* Main.storyboard in Resources */,
-				8A1F8C5428908D8100D75CF9 /* checkmark.jpeg in Resources */,
 				8A1F8C562891D4C300D75CF9 /* Pantry.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
