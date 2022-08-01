@@ -6,10 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IngredientCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IngredientsViewController : UITableViewController
+
+@property (nonatomic, strong) NSArray *pantry;
 
 @end
 

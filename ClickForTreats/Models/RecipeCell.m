@@ -7,6 +7,7 @@
 
 #import "RecipeCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "RecipeAPIManager.h"
 
 @implementation RecipeCell
 
@@ -28,9 +29,7 @@
     // You need to do this any time you create a custom setter.
 
     _recipe = recipe;
-
     self.titleLabel.text = self.recipe.title;
-
     self.posterView.image = nil;
     if (self.recipe.posterUrl != nil) {
         [self.posterView setImageWithURL:self.recipe.posterUrl];

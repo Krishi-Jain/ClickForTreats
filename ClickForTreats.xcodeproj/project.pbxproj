@@ -10,6 +10,8 @@
 		11D494EA33628684DB091A26 /* Pods_ClickForTreatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF6A127C0F33B3CCA5A867 /* Pods_ClickForTreatsTests.framework */; };
 		8A1F8C45288622DB00D75CF9 /* RecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F8C44288622DB00D75CF9 /* RecipeCell.m */; };
 		8A1F8C4E288B321000D75CF9 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F8C4D288B321000D75CF9 /* Parser.m */; };
+		8A1F8C52289073C400D75CF9 /* IngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F8C51289073C400D75CF9 /* IngredientCell.m */; };
+		8A1F8C562891D4C300D75CF9 /* Pantry.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8A1F8C552891D4C300D75CF9 /* Pantry.csv */; };
 		8A59B22C2876548C00518497 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59B22B2876548C00518497 /* AppDelegate.m */; };
 		8A59B22F2876548C00518497 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59B22E2876548C00518497 /* SceneDelegate.m */; };
 		8A59B2352876548C00518497 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A59B2332876548C00518497 /* Main.storyboard */; };
@@ -60,6 +62,9 @@
 		8A1F8C44288622DB00D75CF9 /* RecipeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeCell.m; sourceTree = "<group>"; };
 		8A1F8C4C288B321000D75CF9 /* Parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		8A1F8C4D288B321000D75CF9 /* Parser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		8A1F8C50289073C400D75CF9 /* IngredientCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientCell.h; sourceTree = "<group>"; };
+		8A1F8C51289073C400D75CF9 /* IngredientCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientCell.m; sourceTree = "<group>"; };
+		8A1F8C552891D4C300D75CF9 /* Pantry.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Pantry.csv; sourceTree = "<group>"; };
 		8A59B2272876548C00518497 /* ClickForTreats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickForTreats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A59B22A2876548C00518497 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8A59B22B2876548C00518497 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -188,6 +193,15 @@
 				8A1F8C44288622DB00D75CF9 /* RecipeCell.m */,
 				8AA5CE80287E424000F1AA4F /* Ingredient.h */,
 				8AA5CE81287E424000F1AA4F /* Ingredient.m */,
+				8A1F8C50289073C400D75CF9 /* IngredientCell.h */,
+				8A1F8C51289073C400D75CF9 /* IngredientCell.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8A1F8C4F288F642400D75CF9 /* API */ = {
+			isa = PBXGroup;
+			children = (
 				8AA5CE7A287E37F400F1AA4F /* RecipeApiManager.h */,
 				8AA5CE7B287E37F400F1AA4F /* RecipeApiManager.m */,
 				8AA5CE7D287E3E9B00F1AA4F /* EdamamURLBuilder.h */,
@@ -195,7 +209,7 @@
 				8A1F8C4C288B321000D75CF9 /* Parser.h */,
 				8A1F8C4D288B321000D75CF9 /* Parser.m */,
 			);
-			path = Models;
+			path = API;
 			sourceTree = "<group>";
 		};
 		8A59B21E2876548C00518497 = {
@@ -223,6 +237,7 @@
 		8A59B2292876548C00518497 /* ClickForTreats */ = {
 			isa = PBXGroup;
 			children = (
+				8A1F8C4F288F642400D75CF9 /* API */,
 				8A1F8C48288767D000D75CF9 /* Models */,
 				8A1F8C472887675200D75CF9 /* View Controllers */,
 				8A1F8C462887670D00D75CF9 /* Delegates */,
@@ -231,6 +246,7 @@
 				8A59B2382876548D00518497 /* LaunchScreen.storyboard */,
 				8A59B23B2876548D00518497 /* Info.plist */,
 				8A59B23C2876548D00518497 /* main.m */,
+				8A1F8C552891D4C300D75CF9 /* Pantry.csv */,
 			);
 			path = ClickForTreats;
 			sourceTree = "<group>";
@@ -364,6 +380,7 @@
 				8A59B23A2876548D00518497 /* LaunchScreen.storyboard in Resources */,
 				8A59B2372876548D00518497 /* Assets.xcassets in Resources */,
 				8A59B2352876548C00518497 /* Main.storyboard in Resources */,
+				8A1F8C562891D4C300D75CF9 /* Pantry.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +510,7 @@
 			files = (
 				8AA5CE79287E341E00F1AA4F /* RecipeViewController.m in Sources */,
 				8AA5CE82287E424000F1AA4F /* Ingredient.m in Sources */,
+				8A1F8C52289073C400D75CF9 /* IngredientCell.m in Sources */,
 				8A7B5DCC287911EF00E41AD7 /* IngredientsViewController.m in Sources */,
 				8A59B22C2876548C00518497 /* AppDelegate.m in Sources */,
 				8A59B23D2876548D00518497 /* main.m in Sources */,

@@ -7,32 +7,117 @@
 
 #import "IngredientsViewController.h"
 
-@interface IngredientsViewController ()
+@interface IngredientsViewController () {
+    NSIndexPath *previousIndexPath, *currentIndexPath;
+}
+
+@property (nonatomic, retain) NSMutableSet* checkedIndexPaths;
 
 @end
 
 @implementation IngredientsViewController
 
+- (id)initWithStyle:(UITableViewStyle)style {
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Preserving selection between presentation
+    self.clearsSelectionOnViewWillAppear = NO;
+    
+    NSString *strPath = [[NSBundle mainBundle] pathForResource:@"Pantry"ofType:@"csv"];
+    NSString *strFile = [NSString stringWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:nil];
+    if (!strFile) {
+        NSLog(@"Error reading file.");
+    }
+    
+    NSMutableArray *lines = [NSMutableArray new];
+    
+    NSScanner *lineScanner = [NSScanner scannerWithString:strFile];
+    do {
+        NSString *line = nil;
+        [lineScanner scanUpToString:@"\n" intoString:&line];
+        NSMutableArray *items = [NSMutableArray new];
+        for (NSString *item in [line componentsSeparatedByString:@","]) {
+            if(item.length > 0) {
+                [items addObject:item];
+            }
+        }
+        [lines addObject:items.copy];
+    } while (![lineScanner isAtEnd]);
+    
+    self.pantry = [lines copy];
+    
+    self.checkedIndexPaths = [NSMutableSet new];
 }
 
-//NSString * csv = @"I,am,a\nc,s,v";
-//NSMutableArray *values = [NSMutableArray new];
-//for (NSString *line in [csv componentsSeparatedByString:@"\n"]) {
-//    [values addObject:[line componentsSeparatedByString:@","]];
-//}
-//self.textView.text = values.description;
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)viewWillAppear:(BOOL)animated {
+    previousIndexPath = nil;
+    currentIndexPath = nil;
 }
-*/
+
+-(void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self.pantry count];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [[self.pantry objectAtIndex:section] count] - 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [[self.pantry objectAtIndex:section] firstObject];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *tableIdentifier = @"ingredientCell";
+    IngredientCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    if (cell == nil) {
+        cell = [[IngredientCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ingredientCell"];
+    }
+    cell.textLabel.text = [[self.pantry objectAtIndex:indexPath.section] objectAtIndex:indexPath.row + 1];
+    
+    if([self.checkedIndexPaths containsObject:indexPath])
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Uncheck the previous checked row
+    if(self.checkedIndexPaths)
+    {
+        IngredientCell* uncheckCell = [tableView cellForRowAtIndexPath:indexPath];
+        uncheckCell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    if([self.checkedIndexPaths containsObject:indexPath])
+    {
+        [self.checkedIndexPaths removeObject:indexPath];
+    }
+    else
+    {
+        IngredientCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.checkedIndexPaths addObject:indexPath];
+    }
+}
 
 @end
