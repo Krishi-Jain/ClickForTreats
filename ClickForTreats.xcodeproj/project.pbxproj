@@ -12,6 +12,8 @@
 		8A1F8C4E288B321000D75CF9 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F8C4D288B321000D75CF9 /* Parser.m */; };
 		8A1F8C52289073C400D75CF9 /* IngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F8C51289073C400D75CF9 /* IngredientCell.m */; };
 		8A1F8C562891D4C300D75CF9 /* Pantry.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8A1F8C552891D4C300D75CF9 /* Pantry.csv */; };
+		8A1F8C5928984FE200D75CF9 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F8C5828984FE200D75CF9 /* ProfileCollectionViewCell.m */; };
+		8A1F8C5C289850D700D75CF9 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F8C5B289850D700D75CF9 /* Post.m */; };
 		8A59B22C2876548C00518497 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59B22B2876548C00518497 /* AppDelegate.m */; };
 		8A59B22F2876548C00518497 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59B22E2876548C00518497 /* SceneDelegate.m */; };
 		8A59B2352876548C00518497 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A59B2332876548C00518497 /* Main.storyboard */; };
@@ -65,6 +67,10 @@
 		8A1F8C50289073C400D75CF9 /* IngredientCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientCell.h; sourceTree = "<group>"; };
 		8A1F8C51289073C400D75CF9 /* IngredientCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientCell.m; sourceTree = "<group>"; };
 		8A1F8C552891D4C300D75CF9 /* Pantry.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Pantry.csv; sourceTree = "<group>"; };
+		8A1F8C5728984FE200D75CF9 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
+		8A1F8C5828984FE200D75CF9 /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
+		8A1F8C5A289850D700D75CF9 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		8A1F8C5B289850D700D75CF9 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		8A59B2272876548C00518497 /* ClickForTreats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickForTreats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A59B22A2876548C00518497 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8A59B22B2876548C00518497 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -180,6 +186,8 @@
 				8A7B5DCB287911EF00E41AD7 /* IngredientsViewController.m */,
 				8AA5CE77287E341E00F1AA4F /* RecipeViewController.h */,
 				8AA5CE78287E341E00F1AA4F /* RecipeViewController.m */,
+				8A1F8C5728984FE200D75CF9 /* ProfileCollectionViewCell.h */,
+				8A1F8C5828984FE200D75CF9 /* ProfileCollectionViewCell.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -195,6 +203,8 @@
 				8AA5CE81287E424000F1AA4F /* Ingredient.m */,
 				8A1F8C50289073C400D75CF9 /* IngredientCell.h */,
 				8A1F8C51289073C400D75CF9 /* IngredientCell.m */,
+				8A1F8C5A289850D700D75CF9 /* Post.h */,
+				8A1F8C5B289850D700D75CF9 /* Post.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -518,10 +528,12 @@
 				8A1F8C45288622DB00D75CF9 /* RecipeCell.m in Sources */,
 				8AA5CE7C287E37F400F1AA4F /* RecipeApiManager.m in Sources */,
 				8AA5CE892880B5DF00F1AA4F /* Recipe.m in Sources */,
+				8A1F8C5C289850D700D75CF9 /* Post.m in Sources */,
 				8A7B5DC9287911B200E41AD7 /* DetailsViewController.m in Sources */,
 				8AA5CE7F287E3E9B00F1AA4F /* EdamamURLBuilder.m in Sources */,
 				8A7B5DC62879119D00E41AD7 /* ProfileViewController.m in Sources */,
 				8A1F8C4E288B321000D75CF9 /* Parser.m in Sources */,
+				8A1F8C5928984FE200D75CF9 /* ProfileCollectionViewCell.m in Sources */,
 				8A7B5DC32879118300E41AD7 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

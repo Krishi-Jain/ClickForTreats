@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface IngredientsViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray *pantry;
+@property(nonatomic, strong, nullable) UIView *tableFooterView;
 
 @end
 

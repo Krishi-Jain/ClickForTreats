@@ -49,6 +49,7 @@
     
     [networkAlert addAction:tryAgainAction];
     
+    // Call the EdamamURLBuilder and pass in the ingredients list created in the segue 
     NSURL *url = [NSURL URLWithString:@"https://api.edamam.com/api/recipes/v2?api_key=e403614b5d3ef7099ca536339b321a94"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
@@ -74,14 +75,14 @@
                // TODO: Get the array of recipes
                NSLog(@"%@", dataDictionary); // log an object with the %@ formatter.
 
-               /*
+               
                // TODO: Store the recipes in a property to use elsewhere
                self.recipes = dataDictionary[@"results"];
                self.filteredData = dataDictionary[@"results"];
                
                // TODO: Reload your table view data
                [self.tableView reloadData];
-               */
+               
            }
            [self.refreshControl endRefreshing];
            [self.activityIndicator stopAnimating];

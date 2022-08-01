@@ -7,9 +7,7 @@
 
 #import "IngredientsViewController.h"
 
-@interface IngredientsViewController () {
-    NSIndexPath *previousIndexPath, *currentIndexPath;
-}
+@interface IngredientsViewController ()
 
 @property (nonatomic, retain) NSMutableSet* checkedIndexPaths;
 
@@ -54,11 +52,6 @@
     self.pantry = [lines copy];
     
     self.checkedIndexPaths = [NSMutableSet new];
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    previousIndexPath = nil;
-    currentIndexPath = nil;
 }
 
 -(void)didReceiveMemoryWarning {
@@ -118,6 +111,10 @@
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         [self.checkedIndexPaths addObject:indexPath];
     }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Converting the NSIndexPath to a list of ingredients
 }
 
 @end
