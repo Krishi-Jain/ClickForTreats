@@ -7,7 +7,6 @@
 
 #import "RecipeCell.h"
 #import "UIImageView+AFNetworking.h"
-#import "RecipeAPIManager.h"
 
 @implementation RecipeCell
 

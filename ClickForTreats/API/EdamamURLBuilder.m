@@ -11,8 +11,9 @@
 @implementation EdamamURLBuilder
 
 
-/// <#Description#>
-/// @param ingredients <#ingredients description#>
+/// EdamamURLBuilder builds the an API URL Path (an address that allows you to access an API and its various features)
+/// @param ingredients NSArray used to store the list of ingredients selected by the user
+
 +(NSURL *)recipesWithIngredients:(NSArray <Ingredient *>*)ingredients {
     //build the URL (NSString with format)
     NSMutableString *urlString = [[NSMutableString alloc] init];

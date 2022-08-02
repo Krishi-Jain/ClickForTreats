@@ -6,10 +6,10 @@
 //
 
 #import "IngredientsViewController.h"
+#import "Ingredient.h"
+#import "RecipeViewController.h"
 
-@interface IngredientsViewController () {
-    NSIndexPath *previousIndexPath, *currentIndexPath;
-}
+@interface IngredientsViewController ()
 
 @property (nonatomic, retain) NSMutableSet* checkedIndexPaths;
 
@@ -54,11 +54,6 @@
     self.pantry = [lines copy];
     
     self.checkedIndexPaths = [NSMutableSet new];
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    previousIndexPath = nil;
-    currentIndexPath = nil;
 }
 
 -(void)didReceiveMemoryWarning {
@@ -118,6 +113,22 @@
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         [self.checkedIndexPaths addObject:indexPath];
     }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the instance of the view controller
+    RecipeViewController *recipeVC = [segue destinationViewController];
+    // Pass the list of ingredients to the RecipeViewController
+    recipeVC.ingredients = [self conversion];
+}
+
+- (NSArray <Ingredient *>*)conversion {
+    NSMutableArray <Ingredient *>*ingredients = [NSMutableArray new];
+    for (NSIndexPath *indexPath in self.checkedIndexPaths) {
+        NSString *ingredientName = [[self.pantry objectAtIndex:indexPath.section] objectAtIndex:indexPath.row + 1];
+        [ingredients addObject:[[Ingredient alloc] initWithName:ingredientName]];
+    }
+    return ingredients.copy;
 }
 
 @end
