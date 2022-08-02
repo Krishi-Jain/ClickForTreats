@@ -9,11 +9,10 @@
 
 @implementation Ingredient
 
-- (id)initWithName:(NSString *)name iconURL:(NSURL *)iconURL {
+- (id)initWithName:(NSString *)name {
     self = [super init];
     if (self) {
         _name = name;
-        _iconURL = iconURL;
     }
     return self;
 }

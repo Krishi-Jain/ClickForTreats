@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RecipeViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *ingredients;
+
 @end
 
 NS_ASSUME_NONNULL_END

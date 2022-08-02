@@ -11,9 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Ingredient : NSObject
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSURL *iconURL;
+// @property (nonatomic, readonly) NSURL *iconURL;
 
-- (id)initWithName:(NSString *)name iconURL:(NSURL *)iconURL;
+- (id)initWithName:(NSString *)name;
 @end
 
 NS_ASSUME_NONNULL_END

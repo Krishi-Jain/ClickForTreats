@@ -6,6 +6,8 @@
 //
 
 #import "IngredientsViewController.h"
+#import "Ingredient.h"
+#import "RecipeViewController.h"
 
 @interface IngredientsViewController ()
 
@@ -114,7 +116,19 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Converting the NSIndexPath to a list of ingredients
+    // Get the instance of the view controller
+    RecipeViewController *recipeVC = [segue destinationViewController];
+    // Pass the list of ingredients to the RecipeViewController
+    recipeVC.ingredients = [self conversion];
+}
+
+- (NSArray <Ingredient *>*)conversion {
+    NSMutableArray <Ingredient *>*ingredients = [NSMutableArray new];
+    for (NSIndexPath *indexPath in self.checkedIndexPaths) {
+        NSString *ingredientName = [[self.pantry objectAtIndex:indexPath.section] objectAtIndex:indexPath.row + 1];
+        [ingredients addObject:[[Ingredient alloc] initWithName:ingredientName]];
+    }
+    return ingredients.copy;
 }
 
 @end

@@ -12,7 +12,7 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     
-    self.title = dictionary[@"..."];
+    self.title = dictionary[@"label"];
     self.caloriesCount = dictionary[@"calories"];
     self.ingredientsCount = dictionary[@"..."];
     
@@ -21,9 +21,8 @@
 
 + (NSArray <Recipe *> *)recipesWithDictionaries:(NSArray *)dictionaries {
     NSMutableArray *recipes = [[NSMutableArray alloc] init];
-    // Implement this function
     for (NSDictionary *dictionary in dictionaries) {
-        // Calling the Movie initializer here
+        // Calling the Recipe initializer here
         Recipe *recipe = [[Recipe alloc] initWithDictionary:dictionary];
         [recipes addObject:recipe];
     }
