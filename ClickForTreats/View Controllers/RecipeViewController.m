@@ -65,11 +65,13 @@
 
                // Gets the array of recipes
                NSLog(@"%@", dataDictionary); // log an object with the %@ formatter.
-
                
-               // Stores the recipes in a property to use elsewhere
-               self.recipes = dataDictionary[@"results"];
-               self.filteredData = dataDictionary[@"results"];
+               NSMutableArray *recipes = [NSMutableArray new];
+               for (NSDictionary *recipeDict in  dataDictionary[@"hits"]) {
+                   Recipe *recipe = [[Recipe alloc] initWithDictionary: recipeDict[@"recipe"]];
+                   [recipes addObject:recipe];
+               }
+               self.recipes = recipes.copy;
                
                // Reloads your table view data
                [self.tableView reloadData];
@@ -86,19 +88,22 @@
     // Dispose of any resources that can be recreated
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:
-    (NSInteger)section{
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.recipes.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    RecipeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell"];
+    RecipeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];
     cell.recipe = self.recipes[indexPath.row];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 213;
 }
 
 #pragma mark - Navigation

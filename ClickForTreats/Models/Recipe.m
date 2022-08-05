@@ -12,10 +12,11 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     
-    self.title = dictionary[@"label"];
-    self.caloriesCount = dictionary[@"calories"];
-    self.ingredientsCount = dictionary[@"..."];
-    
+    if (self != nil) {
+        self.title = dictionary[@"label"];
+        self.caloriesCount = dictionary[@"calories"];
+        self.ingredientsCount = dictionary[@"ingredientLines"];
+    }
     return self;
 }
 
