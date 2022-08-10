@@ -13,9 +13,13 @@
     self = [super init];
     
     if (self != nil) {
-        self.title = dictionary[@"label"];
-        self.caloriesCount = dictionary[@"calories"];
-        self.ingredientsCount = dictionary[@"ingredientLines"];
+        _title = dictionary[@"label"];
+        _caloriesCount = [@([dictionary[@"calories"] integerValue]) stringValue];
+        _ingredientsCount = [@([dictionary[@"ingredientLines"] count]) stringValue];
+        _healthLabels  = dictionary[@"healthLabels"];
+        NSURL *imageURL = [NSURL URLWithString:dictionary[@"images"][@"REGULAR"][@"url"]];
+        _image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
+        _webURL = [NSURL URLWithString:dictionary[@"url"]];
     }
     return self;
 }
