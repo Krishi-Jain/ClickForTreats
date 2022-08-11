@@ -2,26 +2,23 @@
 //  Post.m
 //  ClickForTreats
 //
-//  Created by Krishi Jain on 8/1/22.
+//  Created by Krishi Jain on 8/11/22.
 //
 
 #import "Post.h"
-#import <Parse/Parse.h>
 
 @implementation Post
 
-/*
 @dynamic postID;
 @dynamic userID;
 @dynamic author;
-@dynamic caption;
 @dynamic image;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
 }
 
-+ (void)postUserImage: (UIImage * _Nullable)image withCaption: (NString * _Nullable)caption withCompletion: (PFBooleanResultBlock _Nullable)completion {
++ (void)postUserImage: (UIImage * _Nullable)image withCaption: (NSString * _Nullable)caption withCompletion: (PFBooleanResultBlock _Nullable)completion {
     Post *newPost = [Post new];
     newPost.image = [self getPFFileFromImage:image];
     newPost.author = [PFUser currentUser];
@@ -40,6 +37,6 @@
     }
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
- */
+ 
 
 @end
