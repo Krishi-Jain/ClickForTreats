@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RecipeCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *ingredientLabel;
-@property (weak, nonatomic) IBOutlet UILabel *calorieLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *posterImage;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *calorieCountLabel;

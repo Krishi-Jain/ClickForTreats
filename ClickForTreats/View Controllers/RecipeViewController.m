@@ -13,12 +13,12 @@
 #import "EdamamURLBuilder.h"
 
 
+
 @interface RecipeViewController ()
 
 @property (nonatomic, strong) NSMutableArray *recipes;
 @property (strong, nonatomic) NSArray *filteredData;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-// @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 

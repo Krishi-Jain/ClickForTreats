@@ -26,11 +26,12 @@
     // creating and attaching the UILongPressGestureRecognizer instance to the instructions button
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     [self.instructionsButton addGestureRecognizer:longPress];
+    
+    [self.recipeTitleLabel setAlpha:0.f];
 }
 
 - (void)stepsFromRecipe {
     NSURL *url = self.recipe.webURL;
-    // NSURL *url = [NSURL URLWithString:@"https://www.bbcgoodfood.com/recipes/green-salad-avocado"];
     NSString *webPage = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
     NSMutableArray *items = [NSMutableArray new];
     for(NSDictionary *dict in [Parser parseString:webPage]) {
@@ -56,18 +57,17 @@
     [[UIApplication sharedApplication] openURL:self.recipe.webURL];
 }
 
-- (IBAction)startFade:(id)sender {
-    [self.recipeTitleLabel setAlpha:0.f];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self startFade];
+}
+    
 
+- (void)startFade {
     //fade in
     [UIView animateWithDuration:2.f delay:0.f options:UIViewAnimationOptionCurveEaseIn animations:^{
         [self.recipeTitleLabel setAlpha:1.f];
-    } completion:^(BOOL finished) {
-        //fade out
-        [UIView animateWithDuration:2.f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            [self.recipeTitleLabel setAlpha:0.f];
-        } completion:nil];
-    }];
+    } completion:nil];
 }
 
 @end
