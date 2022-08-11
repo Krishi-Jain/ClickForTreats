@@ -20,7 +20,8 @@
     [self stepsFromRecipe];
     
     self.recipeTitleLabel.text = self.recipe.title;
-    // self.posterImageView.image = self.recipe.posterUrl;
+    self.posterImageView.image = self.recipe.image;
+    self.backgroundImageView.image = self.recipe.image;
     
     // creating and attaching the UILongPressGestureRecognizer instance to the instructions button
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
@@ -28,14 +29,15 @@
 }
 
 - (void)stepsFromRecipe {
-    NSURL *url = [NSURL URLWithString:@"https://www.bbcgoodfood.com/recipes/green-salad-avocado"];
+    NSURL *url = self.recipe.webURL;
+    // NSURL *url = [NSURL URLWithString:@"https://www.bbcgoodfood.com/recipes/green-salad-avocado"];
     NSString *webPage = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
-//    NSDictionary *dict = [webPage substringFromIndex:0];
-//    for (id text in [dict allKeys]) {
-//        NSString *steps = dict[text];
-//        NSLog(steps);
-//    }
-    self.textView.text = [Parser parseString:webPage].description;
+    NSMutableArray *items = [NSMutableArray new];
+    for(NSDictionary *dict in [Parser parseString:webPage]) {
+        NSString *steps = dict[@"text"];
+        [items addObject:steps];
+    };
+    self.textView.text = [items componentsJoinedByString:@"\n"];
 }
 
 // implementing the method that handles the long press gesture
@@ -44,6 +46,14 @@
          NSLog(@"Long Press");
     }
     // TODO: add the code to display the website preview on the app once the user long presses the instructions button
+}
+
+-(IBAction)openWebLink {
+    [[UIApplication sharedApplication] openURL:self.recipe.webURL];
+}
+
+-(IBAction)openWebLink2 {
+    [[UIApplication sharedApplication] openURL:self.recipe.webURL];
 }
 
 - (IBAction)startFade:(id)sender {

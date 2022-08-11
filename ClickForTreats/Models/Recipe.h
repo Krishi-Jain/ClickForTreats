@@ -6,17 +6,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Recipe : NSObject
 
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSURL *posterUrl;
-@property (nonatomic, strong) NSString *caloriesCount;
-@property (nonatomic, strong) NSString *ingredientsCount;
+@property (nonatomic, strong, readonly) NSString *title;
+@property (nonatomic, strong, readonly) NSURL *posterUrl;
+@property (nonatomic, strong, readonly) NSString *caloriesCount;
+@property (nonatomic, strong, readonly) NSString *ingredientsCount;
+@property (nonatomic, strong, readonly) NSURL *webURL;
+@property (nonatomic, strong, readonly) UIImage *image;
+@property (nonatomic, strong, readonly) NSArray *healthLabels;
 
-- (id)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 + (NSArray *)recipesWithDictionaries:(NSArray *)dictionaries;
 
 @end

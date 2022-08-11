@@ -29,10 +29,10 @@
 
     _recipe = recipe;
     self.titleLabel.text = self.recipe.title;
-    self.posterView.image = nil;
-    if (self.recipe.posterUrl != nil) {
-        [self.posterView setImageWithURL:self.recipe.posterUrl];
-    }
+    self.healthLabels.text = [self.recipe.healthLabels componentsJoinedByString:@", "];
+    self.calorieCountLabel.text = self.recipe.caloriesCount;
+    self.ingredientsCountLabel.text = self.recipe.ingredientsCount;
+    self.posterImage.image = self.recipe.image;
 }
 
 @end

@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSMutableArray *recipes;
 @property (strong, nonatomic) NSArray *filteredData;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
+// @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -36,6 +36,8 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchRecipes) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
+    self.recipeImageView.image = self.recipe.image;
 }
 
 - (void)fetchRecipes{
@@ -61,13 +63,13 @@
                }];
            }
            else {
-               NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+               self.dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 
                // Gets the array of recipes
-               NSLog(@"%@", dataDictionary); // log an object with the %@ formatter.
+               NSLog(@"%@", self.dataDictionary); // log an object with the %@ formatter.
                
                NSMutableArray *recipes = [NSMutableArray new];
-               for (NSDictionary *recipeDict in  dataDictionary[@"hits"]) {
+               for (NSDictionary *recipeDict in  self.dataDictionary[@"hits"]) {
                    Recipe *recipe = [[Recipe alloc] initWithDictionary: recipeDict[@"recipe"]];
                    [recipes addObject:recipe];
                }

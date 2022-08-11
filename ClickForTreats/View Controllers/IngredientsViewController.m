@@ -52,7 +52,6 @@
     } while (![lineScanner isAtEnd]);
     
     self.pantry = [lines copy];
-    
     self.checkedIndexPaths = [NSMutableSet new];
 }
 
