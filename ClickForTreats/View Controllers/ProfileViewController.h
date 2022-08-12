@@ -7,7 +7,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "Post.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *profileName;
-@property (nonatomic, strong) Post *post;
 
 @end
 

@@ -46,7 +46,7 @@
                                 <connections>
                                     <action selector="login:" destination="sDE-xB-WVb" eventType="touchUpInside" id="Dtt-EC-ncN"/>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fe9-Rc-DFg"/>
-                                    <segue destination="w60-uT-2Xi" kind="show" identifier="homeSegue" id="czf-TU-B9R"/>
+                                    <segue destination="w60-uT-2Xi" kind="show" identifier="homeSegue" id="aA9-kx-Ktd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5k4-tF-Z4j">
@@ -458,8 +458,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="5am-B3-PPa" kind="relationship" relationship="viewControllers" id="e5E-wI-KU9"/>
                         <segue destination="Ldh-Os-KvN" kind="relationship" relationship="viewControllers" id="ajb-UF-hoa"/>
+                        <segue destination="5am-B3-PPa" kind="relationship" relationship="viewControllers" id="e5E-wI-KU9"/>
                         <segue destination="rcD-W1-aW2" kind="relationship" relationship="viewControllers" id="dW7-u6-lLy"/>
                     </connections>
                 </tabBarController>

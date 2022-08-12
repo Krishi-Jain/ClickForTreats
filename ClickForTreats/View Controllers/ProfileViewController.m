@@ -8,7 +8,6 @@
 
 #import "ProfileViewController.h"
 #import <Parse/Parse.h>
-#import "Post.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
